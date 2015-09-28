@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+        android:id="@+id/updates"
+        android:checked="false"
+        android:icon="@drawable/update"
+        android:title="News &amp; updates" />
+        <item
+            android:id="@+id/syllabus"
+            android:checked="false"
+            android:icon="@drawable/syllabus"
+            android:title="Syllabus" />
+        <item
+            android:id="@+id/rules"
+            android:checked="false"
+            android:icon="@drawable/rules_regulations"
+            android:title="Rules &amp; Regulations" />
+        <item
+            android:id="@+id/academic_calendar"
+            android:checked="false"
+            android:icon="@drawable/calendar"
+            android:title="Academic Calendar" />
+        <item
+            android:id="@+id/join"
+            android:checked="false"
+            android:icon="@drawable/join_with_us"
+            android:title="Join with Us" />
+
+    </group>
+
+</menu>
