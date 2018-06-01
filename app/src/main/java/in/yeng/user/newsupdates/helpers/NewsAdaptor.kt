@@ -1,10 +1,11 @@
 package `in`.yeng.user.newsupdates.helpers
 
+import `in`.yeng.user.AnimUtil
 import `in`.yeng.user.R
 import `in`.yeng.user.helpers.DateHelper
 import `in`.yeng.user.newsupdates.dom.NewsRes
 import `in`.yeng.user.pdfviewer.PdfViewer
-import `in`.yeng.user.viewbinders.BinderTypes
+import `in`.yeng.user.helpers.viewbinders.BinderTypes
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -24,7 +25,6 @@ class NewsAdaptor(activity: AppCompatActivity, val data: NewsRes) : RecyclerBind
         val holder = viewHolder as ViewHolder
         with(holder.view) {
             title.text = data.tittle
-
             news.text = data.news
             display_date.text = "Published ".plus(DateHelper.getRelativeDate(data.displayDate))
             end_date.text = "expiry ".plus(DateHelper.getRelativeDate(data.endDate))
@@ -34,6 +34,7 @@ class NewsAdaptor(activity: AppCompatActivity, val data: NewsRes) : RecyclerBind
                 attachment_name.text = "View Attachment"
 
                 card.setOnClickListener {
+                    AnimUtil.clickAnimation(it)
                     context.startActivity(context.intentFor<PdfViewer>("url" to data.attachmentPath.replace("public/", "")))
                 }
             }
